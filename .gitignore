@@ -1,0 +1,37 @@
+# Dependencias
+node_modules/
+*/node_modules/
+
+# Variables de entorno
+.env
+server/.env
+client/.env
+
+# Build outputs
+dist/
+build/
+*/dist/
+*/build/
+
+# TypeScript
+*.js.map
+*.d.ts.map
+
+# Logs
+*.log
+npm-debug.log*
+
+# Basura del Mac y Windows
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+
+# PM2
+.pm2/
+
+# Basura de Vite
+.vite/
