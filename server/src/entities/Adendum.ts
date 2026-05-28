@@ -21,8 +21,8 @@ export class Adendum {
   @Column({ type: 'date' })
   fecha!: string;
 
-  @Column({ type: 'numeric', nullable: true })
-  monto!: number;
+  @Column({ type: 'int', nullable: true })
+  monto?: number | null;
 
   @ManyToOne(() => Proyecto, proyecto => proyecto.adendums)
   @JoinColumn({ name: 'proyectoId' })

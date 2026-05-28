@@ -13,20 +13,20 @@ export class Proyecto {
   @Column()
   nombre!: string;
 
-  @Column({ nullable: true })
-  descripcion!: string;
+  @Column({ type: 'varchar', nullable: true })
+  descripcion?: string | null;
 
   @Column({ type: 'date' })
   fechaInicio!: string;
 
   @Column({ type: 'date', nullable: true })
-  fechaFin!: string;
+  fechaFin?: string | null;
 
-  @Column({ type: 'numeric', nullable: true })
-  presupuesto!: number;
+  @Column({ type: 'int', nullable: true })
+  presupuesto?: number | null;
 
-  @Column({ nullable: true })
-  estandarLimpieza!: string;
+  @Column({ type: 'varchar', nullable: true })
+  estandarLimpieza?: string | null;
 
   // activo, finalizado, suspendido
   @Column({ type: 'varchar', default: 'activo' })

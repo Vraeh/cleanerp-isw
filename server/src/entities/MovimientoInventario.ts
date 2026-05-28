@@ -14,11 +14,11 @@ export class MovimientoInventario {
   @Column()
   productoId!: number;
 
-  @Column({ nullable: true })
-  instalacionOrigenId!: number;
+  @Column({ type: 'int', nullable: true })
+  instalacionOrigenId?: number | null;
 
-  @Column({ nullable: true })
-  instalacionDestinoId!: number;
+  @Column({ type: 'int', nullable: true })
+  instalacionDestinoId?: number | null;
 
   // entrada, salida, transferencia
   @Column({ type: 'varchar' })
@@ -33,8 +33,8 @@ export class MovimientoInventario {
   @Column()
   responsableId!: number;
 
-  @Column({ nullable: true })
-  notas!: string;
+  @Column({ type: 'varchar', nullable: true })
+  notas?: string | null;
 
   @ManyToOne(() => Producto)
   @JoinColumn({ name: 'productoId' })
@@ -42,11 +42,11 @@ export class MovimientoInventario {
 
   @ManyToOne(() => Instalacion, { nullable: true })
   @JoinColumn({ name: 'instalacionOrigenId' })
-  instalacionOrigen!: Instalacion;
+  instalacionOrigen?: Instalacion | null;
 
   @ManyToOne(() => Instalacion, { nullable: true })
   @JoinColumn({ name: 'instalacionDestinoId' })
-  instalacionDestino!: Instalacion;
+  instalacionDestino?: Instalacion | null;
 
   @ManyToOne(() => Usuario)
   @JoinColumn({ name: 'responsableId' })

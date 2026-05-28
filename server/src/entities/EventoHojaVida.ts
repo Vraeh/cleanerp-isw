@@ -27,8 +27,8 @@ export class EventoHojaVida {
   @Column()
   registradoPorId!: number;
 
-  @Column({ nullable: true })
-  instalacionId!: number;
+  @Column({ type: 'int', nullable: true })
+  instalacionId?: number | null;
 
   @ManyToOne(() => Trabajador)
   @JoinColumn({ name: 'trabajadorId' })
@@ -40,5 +40,5 @@ export class EventoHojaVida {
 
   @ManyToOne(() => Instalacion, { nullable: true })
   @JoinColumn({ name: 'instalacionId' })
-  instalacion!: Instalacion;
+  instalacion?: Instalacion | null;
 }

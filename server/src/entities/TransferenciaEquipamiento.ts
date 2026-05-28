@@ -14,11 +14,11 @@ export class TransferenciaEquipamiento {
   @Column()
   equipamientoId!: number;
 
-  @Column({ nullable: true })
-  instalacionOrigenId!: number;
+  @Column({ type: 'int', nullable: true })
+  instalacionOrigenId?: number | null;
 
-  @Column({ nullable: true })
-  instalacionDestinoId!: number;
+  @Column({ type: 'int', nullable: true })
+  instalacionDestinoId?: number | null;
 
   @CreateDateColumn()
   fecha!: Date;
@@ -26,8 +26,8 @@ export class TransferenciaEquipamiento {
   @Column()
   responsableId!: number;
 
-  @Column({ nullable: true })
-  motivo!: string;
+  @Column({ type: 'varchar', nullable: true })
+  motivo?: string | null;
 
   @ManyToOne(() => Equipamiento)
   @JoinColumn({ name: 'equipamientoId' })
@@ -35,11 +35,11 @@ export class TransferenciaEquipamiento {
 
   @ManyToOne(() => Instalacion, { nullable: true })
   @JoinColumn({ name: 'instalacionOrigenId' })
-  instalacionOrigen!: Instalacion;
+  instalacionOrigen?: Instalacion | null;
 
   @ManyToOne(() => Instalacion, { nullable: true })
   @JoinColumn({ name: 'instalacionDestinoId' })
-  instalacionDestino!: Instalacion;
+  instalacionDestino?: Instalacion | null;
 
   @ManyToOne(() => Usuario)
   @JoinColumn({ name: 'responsableId' })

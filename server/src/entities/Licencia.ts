@@ -32,8 +32,8 @@ export class Licencia {
   @Column({ type: 'boolean', default: false })
   habilitaReemplazo!: boolean;
 
-  @Column({ nullable: true })
-  notas!: string;
+  @Column({ type: 'varchar', nullable: true })
+  notas?: string | null;
 
   @ManyToOne(() => Trabajador)
   @JoinColumn({ name: 'trabajadorId' })

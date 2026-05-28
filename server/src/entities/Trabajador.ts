@@ -19,38 +19,38 @@ export class Trabajador {
   @Column()
   apellidos!: string;
 
-  @Column({ nullable: true })
-  email!: string;
+  @Column({ type: 'varchar', nullable: true })
+  email?: string | null;
 
-  @Column({ nullable: true })
-  telefono!: string;
+  @Column({ type: 'varchar', nullable: true })
+  telefono?: string | null;
 
-  @Column({ nullable: true })
-  direccion!: string;
+  @Column({ type: 'varchar', nullable: true })
+  direccion?: string | null;
 
   @Column({ type: 'date', nullable: true })
-  fechaNacimiento!: string;
+  fechaNacimiento?: string | null;
 
   // capital, cuprum, habitat, planvital, provida, uno
-  @Column({ nullable: true })
-  afp!: string;
+  @Column({ type: 'varchar', nullable: true })
+  afp?: string | null;
 
   // fonasa_a, fonasa_b, fonasa_c, fonasa_d, isapre_*
-  @Column({ nullable: true })
-  salud!: string;
+  @Column({ type: 'varchar', nullable: true })
+  salud?: string | null;
 
   // completa, parcial, turno
-  @Column({ nullable: true })
-  tipoJornada!: string;
+  @Column({ type: 'varchar', nullable: true })
+  tipoJornada?: string | null;
 
-  @Column({ nullable: true })
-  horarioColacion!: string;
+  @Column({ type: 'varchar', nullable: true })
+  horarioColacion?: string | null;
 
-  @Column({ nullable: true })
-  cargo!: string;
+  @Column({ type: 'varchar', nullable: true })
+  cargo?: string | null;
 
-  @Column({ nullable: true })
-  cuentaRut!: string;
+  @Column({ type: 'varchar', nullable: true })
+  cuentaRut?: string | null;
 
   @OneToMany(() => ContratoLaboral, contrato => contrato.trabajador)
   contratos!: ContratoLaboral[];

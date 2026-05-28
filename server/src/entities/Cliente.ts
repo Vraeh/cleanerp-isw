@@ -17,20 +17,20 @@ export class Cliente {
   @Column()
   nombre!: string;
 
-  @Column({ nullable: true })
-  direccion!: string;
+  @Column({ type: 'varchar', nullable: true })
+  direccion?: string | null;
 
-  @Column({ nullable: true })
-  ciudad!: string;
+  @Column({ type: 'varchar', nullable: true })
+  ciudad?: string | null;
 
-  @Column({ nullable: true })
-  nombreContacto!: string;
+  @Column({ type: 'varchar', nullable: true })
+  nombreContacto?: string | null;
 
-  @Column({ nullable: true })
-  emailContacto!: string;
+  @Column({ type: 'varchar', nullable: true })
+  emailContacto?: string | null;
 
-  @Column({ nullable: true })
-  telefonoContacto!: string;
+  @Column({ type: 'varchar', nullable: true })
+  telefonoContacto?: string | null;
 
   @Column()
   tipoEstablecimientoId!: number;

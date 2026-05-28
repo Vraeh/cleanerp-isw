@@ -10,8 +10,8 @@ export class TipoEstablecimiento {
   @Column({ unique: true })
   nombre!: string;
 
-  @Column({ nullable: true })
-  descripcion!: string;
+  @Column({ type: 'varchar', nullable: true })
+  descripcion?: string | null;
 
   @OneToMany(() => Cliente, cliente => cliente.tipoEstablecimiento)
   clientes!: Cliente[];
