@@ -60,9 +60,9 @@ export async function actualizarEstadoLicencia(req: Request, res: Response) {
   const id = parseInt(req.params.id);
   const { estado } = req.body;
 
-  const estadosValidos = ['pendiente', 'devuelta', 'rechazada'];
+  const estadosValidos = ['pendiente', 'aprobada', 'devuelta', 'rechazada'];
   if (!estadosValidos.includes(estado)) {
-    return res.status(400).json({ mensaje: 'Estado invalido. Valores: pendiente, devuelta, rechazada' });
+    return res.status(400).json({ mensaje: 'Estado invalido. Valores: pendiente, aprobada, devuelta, rechazada' });
   }
 
   try {

@@ -121,6 +121,20 @@ export async function listarInstalaciones(req: Request, res: Response) {
   }
 }
 
+export async function listarTodasInstalaciones(req: Request, res: Response) {
+  try {
+    const repo = AppDataSource.getRepository(Instalacion);
+    const instalaciones = await repo.find({
+      relations: ['cliente'],
+      order: { nombre: 'ASC' },
+    });
+    return res.json(instalaciones);
+  } catch (err: any) {
+    console.error('Error al listar todas las instalaciones:', err);
+    return res.status(500).json({ mensaje: 'Error interno' });
+  }
+}
+
 export async function crearInstalacion(req: Request, res: Response) {
   const { nombre, direccion, clienteId } = req.body;
 
