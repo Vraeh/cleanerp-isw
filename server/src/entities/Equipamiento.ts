@@ -16,18 +16,18 @@ export class Equipamiento {
   @Column({ unique: true })
   numeroSerie!: string;
 
-  @Column({ nullable: true })
-  instalacionId!: number;
+  @Column({ type: 'int', nullable: true })
+  instalacionId?: number | null;
 
   // operativo, mantenimiento, baja
   @Column({ type: 'varchar', default: 'operativo' })
   estado!: string;
 
   @Column({ type: 'date', nullable: true })
-  fechaCompra!: string;
+  fechaCompra?: string | null;
 
   @Column({ type: 'date', nullable: true })
-  fechaUltimoMantenimiento!: string;
+  fechaUltimoMantenimiento?: string | null;
 
   @ManyToOne(() => Producto)
   @JoinColumn({ name: 'productoId' })
@@ -35,5 +35,5 @@ export class Equipamiento {
 
   @ManyToOne(() => Instalacion, { nullable: true })
   @JoinColumn({ name: 'instalacionId' })
-  instalacion!: Instalacion;
+  instalacion?: Instalacion | null;
 }

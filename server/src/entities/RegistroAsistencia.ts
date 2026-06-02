@@ -17,17 +17,17 @@ export class RegistroAsistencia {
   @Column()
   instalacionId!: number;
 
-  @Column({ nullable: true })
-  tokenId!: number;
+  @Column({ type: 'int', nullable: true })
+  tokenId?: number | null;
 
   @Column({ type: 'date' })
   fecha!: string;
 
   @Column({ type: 'time', nullable: true })
-  horaEntrada!: string;
+  horaEntrada?: string | null;
 
   @Column({ type: 'time', nullable: true })
-  horaSalida!: string;
+  horaSalida?: string | null;
 
   // aprobado, token_invalido, token_expirado, ausente, licencia
   @Column({ type: 'varchar', default: 'ausente' })
@@ -43,5 +43,5 @@ export class RegistroAsistencia {
 
   @ManyToOne(() => TokenAsistencia, { nullable: true })
   @JoinColumn({ name: 'tokenId' })
-  token!: TokenAsistencia;
+  token?: TokenAsistencia | null;
 }

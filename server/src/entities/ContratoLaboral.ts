@@ -24,17 +24,17 @@ export class ContratoLaboral {
   fechaInicio!: string;
 
   @Column({ type: 'date', nullable: true })
-  fechaFin!: string;
+  fechaFin?: string | null;
 
   // activo, terminado, suspendido
   @Column({ type: 'varchar', default: 'activo' })
   estado!: string;
 
-  @Column({ nullable: true })
-  cargo!: string;
+  @Column({ type: 'varchar', nullable: true })
+  cargo?: string | null;
 
-  @Column({ type: 'numeric', nullable: true })
-  salario!: number;
+  @Column({ type: 'int', nullable: true })
+  salario?: number | null;
 
   @ManyToOne(() => Trabajador, trabajador => trabajador.contratos)
   @JoinColumn({ name: 'trabajadorId' })

@@ -34,8 +34,24 @@ export const ETIQUETAS_ESTADO_ASISTENCIA = {
 
 export const ETIQUETAS_ESTADO_LICENCIA = {
   pendiente: 'Pendiente',
+  aprobada: 'Aprobada',
   devuelta: 'Devuelta',
   rechazada: 'Rechazada',
+} as const;
+
+export const COLORES_ESTADO_LICENCIA = {
+  pendiente: 'bg-amber-100 text-amber-800',
+  aprobada: 'bg-emerald-100 text-emerald-800',
+  devuelta: 'bg-blue-100 text-blue-800',
+  rechazada: 'bg-red-100 text-red-800',
+} as const;
+
+export const ETIQUETAS_TIPO_LICENCIA = {
+  medica: 'Médica',
+  mutual: 'Mutual',
+  maternidad: 'Maternidad',
+  paternidad: 'Paternidad',
+  administrativa: 'Administrativa',
 } as const;
 
 export const ETIQUETAS_TIPO_EVENTO = {
@@ -43,6 +59,13 @@ export const ETIQUETAS_TIPO_EVENTO = {
   felicitacion: 'Felicitación',
   observacion_cliente: 'Observación de Cliente',
   denuncia_ley_karin: 'Denuncia Ley Karin',
+} as const;
+
+export const COLORES_TIPO_EVENTO = {
+  amonestacion: 'bg-red-100 text-red-800',
+  felicitacion: 'bg-emerald-100 text-emerald-800',
+  observacion_cliente: 'bg-blue-100 text-blue-800',
+  denuncia_ley_karin: 'bg-purple-100 text-purple-800',
 } as const;
 
 export const ETIQUETAS_CATEGORIA_PRODUCTO = {
@@ -76,7 +99,7 @@ export const ETIQUETAS_ESTADO_EQUIPAMIENTO = {
   baja: 'De Baja',
 } as const;
 
-// colores de badges - los voy agregando según los necesito
+// colores de badges
 export const COLORES_ESTADO_PROYECTO = {
   activo: 'bg-emerald-100 text-emerald-800',
   finalizado: 'bg-gray-100 text-gray-800',
@@ -113,6 +136,7 @@ export const SECCIONES_NAV = [
       { nombre: 'Trabajadores', ruta: '/personal/trabajadores', icono: 'Users', roles: ['admin', 'supervisor'] as RolUsuario[] },
       { nombre: 'Contratos', ruta: '/personal/contratos', icono: 'FileText', roles: ['admin'] as RolUsuario[] },
       { nombre: 'Asignaciones', ruta: '/personal/asignaciones', icono: 'MapPin', roles: ['admin', 'supervisor'] as RolUsuario[] },
+      { nombre: 'Hoja de Vida', ruta: '/personal/hoja-vida', icono: 'ClipboardList', roles: ['admin', 'supervisor'] as RolUsuario[] },
     ],
   },
   {

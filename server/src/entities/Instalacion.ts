@@ -13,14 +13,14 @@ export class Instalacion {
   @Column()
   nombre!: string;
 
-  @Column({ nullable: true })
-  direccion!: string;
+  @Column({ type: 'varchar', nullable: true })
+  direccion?: string | null;
 
   @Column()
   clienteId!: number;
 
-  @Column({ nullable: true })
-  supervisorId!: number;
+  @Column({ type: 'int', nullable: true })
+  supervisorId?: number | null;
 
   @ManyToOne(() => Cliente, cliente => cliente.instalaciones)
   @JoinColumn({ name: 'clienteId' })
@@ -28,5 +28,5 @@ export class Instalacion {
 
   @ManyToOne(() => Usuario, { nullable: true })
   @JoinColumn({ name: 'supervisorId' })
-  supervisor!: Usuario;
+  supervisor?: Usuario | null;
 }

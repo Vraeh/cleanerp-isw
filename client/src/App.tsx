@@ -8,6 +8,7 @@ import DashboardPage from './pages/dashboard/DashboardPage';
 import TrabajadoresPage from './pages/personal/TrabajadoresPage';
 import ContratosPage from './pages/personal/ContratosPage';
 import AsignacionesPage from './pages/personal/AsignacionesPage';
+import EventoHojaVidaPage from './pages/personal/EventoHojaVidaPage';
 // Clientes y proyectos
 import ClientesPage from './pages/clientes/ClientesPage';
 import ProyectosPage from './pages/proyectos/ProyectosPage';
@@ -56,6 +57,7 @@ function AppRoutes() {
         <Route path="personal/trabajadores" element={<TrabajadoresPage />} />
         <Route path="personal/contratos" element={<ContratosPage />} />
         <Route path="personal/asignaciones" element={<AsignacionesPage />} />
+        <Route path="personal/hoja-vida" element={<EventoHojaVidaPage />} />
         {/* Clientes y proyectos */}
         <Route path="clientes" element={<ClientesPage />} />
         <Route path="proyectos" element={<ProyectosPage />} />

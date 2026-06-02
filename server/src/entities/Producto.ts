@@ -19,11 +19,11 @@ export class Producto {
   @Column({ type: 'varchar' })
   compatibilidad!: string;
 
-  @Column({ nullable: true })
-  unidad!: string;
+  @Column({ type: 'varchar', nullable: true })
+  unidad?: string | null;
 
-  @Column({ nullable: true })
-  descripcion!: string;
+  @Column({ type: 'varchar', nullable: true })
+  descripcion?: string | null;
 
   @OneToMany(() => StockInstalacion, stock => stock.producto)
   stockPorInstalacion!: StockInstalacion[];

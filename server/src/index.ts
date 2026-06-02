@@ -9,6 +9,13 @@ import trabajadorRoutes from './routes/trabajadorRoutes';
 import proyectoRoutes from './routes/proyectoRoutes';
 import productoRoutes from './routes/productoRoutes';
 import inventarioRoutes from './routes/inventarioRoutes';
+// Entrega 2
+import asistenciaRoutes from './routes/asistenciaRoutes';
+import asignacionRoutes from './routes/asignacionRoutes';
+import personalExtRoutes from './routes/personalExtRoutes';
+import solicitudRoutes from './routes/solicitudRoutes';
+import equipamientoRoutes from './routes/equipamientoRoutes';
+import movimientoRoutes from './routes/movimientoRoutes';
 import { errorHandler } from './handlers/errorHandler';
 import { env } from './config/configEnv';
 
@@ -17,13 +24,21 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Rutas de la API
+// Rutas de la API — Entrega 1
 app.use('/api/auth', authRoutes);
 app.use('/api', clienteRoutes);
 app.use('/api', trabajadorRoutes);
 app.use('/api', proyectoRoutes);
 app.use('/api', productoRoutes);
 app.use('/api', inventarioRoutes);
+
+// Rutas de la API — Entrega 2
+app.use('/api', asistenciaRoutes);
+app.use('/api', asignacionRoutes);
+app.use('/api', personalExtRoutes);
+app.use('/api', solicitudRoutes);
+app.use('/api', equipamientoRoutes);
+app.use('/api', movimientoRoutes);
 
 // Manejo global de errores (debe ir al final)
 app.use(errorHandler);

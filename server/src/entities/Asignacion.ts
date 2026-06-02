@@ -20,7 +20,7 @@ export class Asignacion {
   fechaInicio!: string;
 
   @Column({ type: 'date', nullable: true })
-  fechaFin!: string;
+  fechaFin?: string | null;
 
   @Column({ type: 'boolean', default: true })
   esActual!: boolean;

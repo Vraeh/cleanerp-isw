@@ -17,15 +17,15 @@ export class SolicitudReabastecimiento {
   @Column()
   solicitadoPorId!: number;
 
-  @Column({ nullable: true })
-  revisadoPorId!: number;
+  @Column({ type: 'int', nullable: true })
+  revisadoPorId?: number | null;
 
   // pendiente, aprobada, en_proceso, entregada, rechazada
   @Column({ type: 'varchar', default: 'pendiente' })
   estado!: string;
 
-  @Column({ nullable: true })
-  notas!: string;
+  @Column({ type: 'varchar', nullable: true })
+  notas?: string | null;
 
   @CreateDateColumn()
   creadoEn!: Date;
@@ -43,7 +43,7 @@ export class SolicitudReabastecimiento {
 
   @ManyToOne(() => Usuario, { nullable: true })
   @JoinColumn({ name: 'revisadoPorId' })
-  revisadoPor!: Usuario;
+  revisadoPor?: Usuario | null;
 
   @OneToMany(() => ItemSolicitud, item => item.solicitud)
   items!: ItemSolicitud[];
